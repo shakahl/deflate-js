@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import zlib
 import base64
 import os

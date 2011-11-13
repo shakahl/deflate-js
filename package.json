@@ -1,0 +1,19 @@
+{
+  "author": "T. Jameson Little <t.jameson.little@gmail.com>",
+  "name": "deflate-js",
+  "description": "DEFLATE implemented in JavaScript (works in browser and Node)",
+  "version": "0.1.0",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/beatgammit/js-deflate.git"
+  },
+  "scripts": {
+    "test": "cd test ; ./checks-generator.py ; ./runner.js ; cd -"
+  },
+  "engines": {
+    "node": "~0.4.10"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
