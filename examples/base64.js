@@ -2,7 +2,7 @@
  * $Id: base64.js,v 0.9 2009/03/01 20:51:18 dankogai Exp dankogai $
  */
 
-(function(){
+(function(window){
 	var b64chars
 		= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
@@ -210,4 +210,4 @@
 			}));
 		}
 	};
-})();
+}(typeof window !== 'undefined' ? window : global));
