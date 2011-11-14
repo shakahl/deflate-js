@@ -4,14 +4,13 @@
   <script src='js/pakmanaged.js'></script>
 </head>
 <body>
-  <h1><span>deflate-js</span>: DEFLATE in JavaScript</h1>
+  <a href="http://github.com/beatgammit/js-deflate"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/abad93f42020b733148435e2cd92ce15c542d320/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub"></a>
+  <h1><span>deflate-js</span>: DEFLATE in pure JavaScript</h1>
   <p>
-    <span>deflate-js</span> is a pure JavaScript implementation of the DEFLATE algorithm. DEFLATE is a popular compression algorithm used both as a stand-alone compression and in the popular GZIP file format.
+    <span>deflate-js</span> is a pure JavaScript implementation of the DEFLATE algorithm.
   </p>
-
-  <h2>Overview</h2>
   <p>
-  With HTML5, complex web application are being written, and there is still no good way to compress data in the browser. The W3 specification gives no way to call native code from a client-side application and most browser APIs are hidden as well. One solution is to make a browser extension to do the heavy lifting, but this obviously requires users to install the extension just to use functionality. This is, of course, not preferred, and this project tries to solve that problem.
+  DEFLATE is a popular compression algorithm used both as a stand-alone compression and in the popular GZIP file format.
   </p>
 
   <h2>Live Example</h2>
@@ -23,7 +22,7 @@
         <textarea id="inflated" cols="64" rows="16"></textarea>
       </div>
       <div class='cell'>
-        <->
+        <span>&#x21D4</span>
       </div>
       <div class='cell'>
         <label>Output (base64 encoded)</label>
@@ -49,13 +48,13 @@
   </p>
   <pre>
     <code>
-      var DEFLATE = require('deflate-js');
+  var DEFLATE = require('deflate-js');
 
-      // compress a string
-      var compressed = DEFLATE.deflate('Hello World');
+  // compress a string
+  var compressed = DEFLATE.deflate('Hello World');
 
-      // decompress a compressed string
-      var decompressed = DEFLATE.inflate(compressed);
+  // decompress a compressed string
+  var decompressed = DEFLATE.inflate(compressed);
     </code>
   <pre>
 </body>

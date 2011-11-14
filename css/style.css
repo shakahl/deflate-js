@@ -1,5 +1,8 @@
 .table {
 	display: table;
+
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .row {
@@ -9,4 +12,47 @@
 .cell {
 	display: table-cell;
 	vertical-align: middle;
+}
+
+body {
+	background-color: rgb(200, 200, 255);
+	font-size: 14pt;
+}
+
+h1 {
+	text-align: center;
+}
+
+h1, h2 {
+	color: rgb(10, 10, 100);
+}
+
+textarea {
+	background-color: rgb(51, 51, 51);
+	color: rgb(75, 142, 181);
+	border-radius: 8px;
+}
+
+p, li {
+	color: rgb(51, 51, 51);
+}
+
+pre {
+	background-color: rgb(51, 51, 51);
+	border-radius: 8px;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+code {
+	color: rgb(75, 142, 181);
+}
+
+span {
+	font-weight: bold;
+}
+
+.cell span {
+	font-size: 20pt;
 }
