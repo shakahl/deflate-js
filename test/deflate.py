@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
 import zlib
-import base64
-import os
-import json
 
-def deflate(data, compresslevel=9):
+def deflate(filename, outfile=None, level=6):
+	f = open(filename)
+	data = f.read()
+	f.close()
+
 	compress = zlib.compressobj(
-		compresslevel,        # level: 0-9
+		level,                # level: 0-9
 		zlib.DEFLATED,        # method: must be DEFLATED
 		-zlib.MAX_WBITS,      # window size in bits:
 		                      #   -15..-8: negate, suppress header
@@ -23,21 +24,26 @@ def deflate(data, compresslevel=9):
 	)
 	deflated = compress.compress(data)
 	deflated += compress.flush()
+
+	if outfile != None:
+		f = open(outfile, 'w')
+		f.write(deflated)
+		f.close()
+
 	return deflated
 
-def inflate(data):
+def inflate(filename, outfile=None):
+	f = open(filename)
+	data = f.read()
+	f.close()
+
 	decompress = zlib.decompressobj(-zlib.MAX_WBITS)  # see above
 	inflated = decompress.decompress(data)
 	inflated += decompress.flush()
+
+	if outfile != None:
+		f = open(outfile, 'w')
+		f.write(inflated)
+		f.close()
+
 	return inflated
-
-out = {}
-
-for tFile in os.listdir('test-files'):
-	f = open(os.path.join('test-files', tFile))
-	data = f.read()
-	f.close()
-	out[tFile] = base64.b64encode(deflate(data))
-
-f = open('checks.json', 'w+')
-f.write(json.JSONEncoder().encode(out))
