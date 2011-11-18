@@ -3,3 +3,4 @@ pakmanaged*
 checks.json
 test-outs
 *.pyc
+*.deflate

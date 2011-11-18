@@ -8,13 +8,14 @@ testDirDefault = 'test-files'
 """
 Run a single test
 
-@param tFile- required; the full path to the file to run
+@param tFile- required; the file to check against (uncompressed data)
 @param level- optional (default: all); the compression level [1-9]
 @param delete- optional (default: True); whether to delete the gzipped files
 @return True if all tests passed; False if at least one test failed
 """
 def runTest(tFile, level=None, delete=True, outDir=outDirDefault):
 	passed = True
+
 	if level == None:
 		for x in range(1, 10):
 			if runTest(tFile, x, delete) == False:
@@ -29,12 +30,12 @@ def runTest(tFile, level=None, delete=True, outDir=outDirDefault):
 		pass
 
 	out1 = os.path.join(outDir, '%(file)s.%(level)d.deflate' % {'file': os.path.basename(tFile), 'level' : level})
-	out2 = os.path.join(outDir, '%(file)s.%(level)d.out.deflate' % {'file': os.path.basename(tFile), 'level' : level})
+	out2 = os.path.join(outDir, '%(file)s.%(level)d' % {'file' : os.path.basename(tFile), 'level' : level})
 
-	outData = deflate(tFile, outfile=out1, level=level)
-	run_cmd('../bin/deflate.js --level %(level)d --file %(file)s --output %(output)s' % {'level' : level, 'file' : tFile, 'output' : out2})
+	deflate(tFile, outfile=out1, level=level)
+	run_cmd('../bin/inflate.js --file %(file)s --output %(output)s' % {'level' : level, 'file' : out1, 'output' : out2})
 
-	result = run_cmd('diff %(file1)s %(file2)s' % {'file1' : out1, 'file2' : out2})
+	result = run_cmd('diff %(file1)s %(file2)s' % {'file1' : tFile, 'file2' : out2})
 	if result['returncode'] == 0:
 		status = Fore.GREEN + 'PASSED' + Fore.RESET
 	else:
