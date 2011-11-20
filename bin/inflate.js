@@ -6,7 +6,6 @@
 		path = require('path'),
 		optimist = require('optimist'),
 		deflate = require('../index'),
-		Base64 = require('../examples/base64'),
 		argv,
 		out;
 

@@ -6,10 +6,11 @@
 	],
 	"name": "deflate-js",
 	"description": "DEFLATE implemented in JavaScript (works in browser and Node)",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"main": "./index.js",
 	"bin": {
-		"gzip-js": "./bin/runner.js"
+		"deflate-js": "./bin/deflate.js",
+		"inflate-js": "./bin/inflate.js"
 	},
 	"repository": {
 		"type": "git",

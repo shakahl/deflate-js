@@ -6,9 +6,7 @@
 		path = require('path'),
 		optimist = require('optimist'),
 		deflate = require('../index'),
-		Base64 = require('../examples/base64'),
 		argv,
-		level,
 		out;
 
 	argv = optimist.usage('Usage: $0 --file [filename] --level [1-9] --output [filename]')
@@ -20,7 +18,7 @@
 				'level': deflate.deflate.DEFAULT_LEVEL
 			}).demand(['file']).argv;
 
-	out = deflate.deflate(fs.readFileSync(argv.file), level);
+	out = deflate.deflate(fs.readFileSync(argv.file), argv.level);
 
 	if (!argv.output) {
 		argv.output = path.basename(argv.file) + '.deflate';
