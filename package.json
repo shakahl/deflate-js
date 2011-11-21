@@ -6,7 +6,7 @@
 	],
 	"name": "deflate-js",
 	"description": "DEFLATE implemented in JavaScript (works in browser and Node)",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"main": "./index.js",
 	"bin": {
 		"deflate-js": "./bin/deflate.js",
@@ -14,13 +14,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/beatgammit/js-deflate.git"
+		"url": "git://github.com/beatgammit/deflate-js.git"
 	},
 	"scripts": {
 		"test": "cd test ; ./runner.py; cd -"
 	},
 	"engines": {
-		"node": "~0.4.10"
+		"node": ">= 0.4.0"
 	},
 	"dependencies": {},
 	"devDependencies": {
