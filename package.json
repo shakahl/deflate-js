@@ -7,7 +7,7 @@
 	"name": "deflate-js",
 	"description": "DEFLATE implemented in JavaScript (works in browser and Node)",
 	"license": "GPL",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"main": "./index.js",
 	"bin": {
 		"deflate-js": "./bin/deflate.js",
