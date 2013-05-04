@@ -6,6 +6,7 @@
 	],
 	"name": "deflate-js",
 	"description": "DEFLATE implemented in JavaScript (works in browser and Node)",
+	"license": "GPL",
 	"version": "0.2.2",
 	"main": "./index.js",
 	"bin": {
